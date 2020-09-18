@@ -62,7 +62,7 @@ public class ChallengeService {
 		int sum = 0;
 
 		for (int i = 1; i <= noOfTimes; i++) {
-			System.out.println("ppppppp:"+RANDOM_VALUE_1_10.nextInt(10));
+			
 			int n1 = RANDOM_VALUE_1_10.nextInt(10) + 1;
 			sJoin.add("" + n1);
 			sum += n1;
