@@ -26,14 +26,14 @@
   {"challenge":{"challengeId":1,"challengeType":"What would be the result when add :1,1,7."},"answer":"9"}
   
   Output:
-  Very good at aruthmetic
+  Thats Great
   
   2.2) Negative Scenario
   
   {"challenge":{"challengeId":1,"challengeType":"What would be the result when add :1,1,7."},"answer":"10"}
   
   Output:
-    Need to improve arithmetic
+    Please try again
   
   
   
