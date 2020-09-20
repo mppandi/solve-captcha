@@ -1,0 +1,42 @@
+{
+	"variables": [],
+	"info": {
+		"name": "SolveCaptcha",
+		"_postman_id": "ec6dae48-0cd0-01c0-6d51-4deeb9f381ce",
+		"description": "SolveCaptcha Assignement",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GenerateChallenge",
+			"request": {
+				"url": "http://localhost:8090/v1/captcha/challenge",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": "GenerateChallenge"
+			},
+			"response": []
+		},
+		{
+			"name": "ChallengeVerify",
+			"request": {
+				"url": "http://localhost:8090/v1/captcha/challengeverify",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"challenge\":{\"challengeId\":1,\"challengeType\":\"What would be the result when add :1,1,7.\"},\"answer\":\"9\"}"
+				},
+				"description": "ChallengeVerify"
+			},
+			"response": []
+		}
+	]
+}
