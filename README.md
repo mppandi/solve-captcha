@@ -34,6 +34,11 @@
   
   Output:
     Please try again
+    
+    
+    Note:
+    
+    Sample Postman collection added in this directory
   
   
   
