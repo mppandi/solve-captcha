@@ -25,56 +25,41 @@ public class ChallengeService {
 		return challenge;
 
 	}
+
 	/**
-	 *  below method used to validate submitted question
+	 * below method used to validate submitted question
+	 * 
 	 * @param solve
 	 * @return
 	 */
 
-	public String verifyChallenge(Solve solve) {
-
+	public boolean verifyChallenge(Solve solve) {
 		Challenge challenge = solve.getChallenge();
 		if (CHALLENGE_VERIFY_MAP.containsKey(challenge.getChallengeId())) {
-
-			if(solve.getAnswer() == CHALLENGE_VERIFY_MAP.get(challenge.getChallengeId())) {
-				return "Very good at aruthmetic";
-			} else {
-				return "Need to improve arithmetic";
-			}
-
+			return solve.getAnswer() == CHALLENGE_VERIFY_MAP.get(challenge.getChallengeId());
 		}
-
-		return "Invalid Challenge";
-
+		return false;
 	}
-	
+
 	/**
 	 * Method used to generate dynamic questions
+	 * 
 	 * @param challengeId
 	 * @param noOfTimes
 	 * @return
 	 */
 
 	private static String generateQuestionWithDynamicNumbers(long challengeId, int noOfTimes) {
-
-		StringJoiner sJoin = new StringJoiner(",", "What would be the result when add :", ".");
-
+		StringJoiner questionJoin = new StringJoiner(",", "What would be the result when add :", ".");
 		int sum = 0;
-
 		for (int i = 1; i <= noOfTimes; i++) {
-			
-			int n1 = RANDOM_VALUE_1_10.nextInt(10) + 1;
-			sJoin.add("" + n1);
+		    int n1 = RANDOM_VALUE_1_10.nextInt(10) + 1;
+		    questionJoin.add("" + n1);
 			sum += n1;
-
 		}
-
 		CHALLENGE_VERIFY_MAP.put(challengeId, sum);
-
-		return sJoin.toString();
+		return questionJoin.toString();
 
 	}
-	
-	
 
 }
